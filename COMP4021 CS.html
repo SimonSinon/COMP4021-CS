@@ -1,0 +1,1938 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>COMP4021 CS</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__left">
+    <div class="stackedit__toc">
+      
+<ul>
+<li><a href="#comp4021-internet-computing">COMP4021: Internet Computing</a>
+<ul>
+<li></li>
+<li><a href="#html">HTML</a></li>
+<li><a href="#images-in-browsers">Images in Browsers</a></li>
+<li><a href="#css">CSS</a></li>
+<li><a href="#css-animations">CSS Animations</a></li>
+<li><a href="#jquery">jQuery</a></li>
+<li><a href="#jquery-events">jQuery Events</a></li>
+<li><a href="#handling-the-dom">Handling the DOM</a></li>
+<li><a href="#introduction-to-javascript">Introduction to JavaScript</a></li>
+<li><a href="#using-timers">Using Timers</a></li>
+<li><a href="#more-on-css">More on CSS</a></li>
+<li><a href="#svg-scalable-vector-graphics">SVG (Scalable Vector Graphics)</a></li>
+<li><a href="#svg-and-css-animations">SVG and CSS Animations</a></li>
+<li><a href="#controlling-css-animations">Controlling CSS Animations</a></li>
+<li><a href="#more-on-svg">More on SVG</a></li>
+<li><a href="#introduction-to-html-canvas">Introduction to HTML Canvas</a></li>
+<li><a href="#using-html-canvas">Using HTML Canvas</a></li>
+<li><a href="#javascript-arrays-and-objects">JavaScript Arrays and Objects</a></li>
+<li><a href="#a-quick-look-at-json">A Quick Look at JSON</a></li>
+<li><a href="#more-on-javascript-functions">More on JavaScript Functions</a></li>
+<li><a href="#drawing-sprites">Drawing Sprites</a></li>
+<li><a href="#animating-sprites">Animating Sprites</a></li>
+<li><a href="#basic-module-pattern">Basic Module Pattern</a></li>
+<li><a href="#basic-http-process">Basic HTTP Process</a></li>
+<li><a href="#getting-started-with-node.js">Getting Started With Node.js</a></li>
+<li><a href="#javascript-promises">JavaScript Promises</a></li>
+<li><a href="#building-a-simple-server">Building a Simple Server</a></li>
+<li><a href="#using-html-forms">Using HTML Forms</a></li>
+<li><a href="#cookies">Cookies</a></li>
+<li><a href="#storing-things-on-browsers">Storing Things on Browsers</a></li>
+<li><a href="#ajax-and-single-page-applications-spa">AJAX and Single-Page Applications (SPA)</a></li>
+<li><a href="#web-authentication">Web Authentication</a></li>
+<li><a href="#real-time-communication-with-websocket">Real-time Communication with WebSocket</a></li>
+<li><a href="#restful-apis">RESTful APIs</a></li>
+<li><a href="#posting-form-data">Posting Form Data</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+  </div>
+  <div class="stackedit__right">
+    <div class="stackedit__html">
+      <h1 id="comp4021-internet-computing">COMP4021: Internet Computing</h1>
+<h3 id="table-of-contents">Table of Contents</h3>
+<ol>
+<li><a href="#html">HTML</a></li>
+<li><a href="#images-in-browsers">Images in Browsers</a></li>
+<li><a href="#css">CSS</a></li>
+<li><a href="#css-animations">CSS Animations</a></li>
+<li><a href="#jquery">jQuery</a></li>
+<li><a href="#jquery-events">jQuery Events</a></li>
+<li><a href="#handling-the-dom">Handling the DOM</a></li>
+<li><a href="#introduction-to-javascript">Introduction to JavaScript</a></li>
+<li><a href="#using-timers">Using Timers</a></li>
+<li><a href="#more-on-css">More on CSS</a></li>
+<li><a href="#svg-scalable-vector-graphics">SVG (Scalable Vector Graphics)</a></li>
+<li><a href="#svg-and-css-animations">SVG and CSS Animations</a></li>
+<li><a href="#controlling-css-animations">Controlling CSS Animations</a></li>
+<li><a href="#more-on-svg">More on SVG</a></li>
+<li><a href="#introduction-to-html-canvas">Introduction to HTML Canvas</a></li>
+<li><a href="#using-html-canvas">Using HTML Canvas</a></li>
+<li><a href="#javascript-arrays-and-objects">JavaScript Arrays and Objects</a></li>
+<li><a href="#a-quick-look-at-json">A Quick Look at JSON</a></li>
+<li><a href="#more-on-javascript-functions">More on JavaScript Functions</a></li>
+<li><a href="#drawing-sprites">Drawing Sprites</a></li>
+<li><a href="#animating-sprites">Animating Sprites</a></li>
+<li><a href="#basic-module-pattern">Basic Module Pattern</a></li>
+<li><a href="#basic-http-process">Basic HTTP Process</a></li>
+<li><a href="#getting-started-with-nodejs">Getting Started With Node.js</a></li>
+<li><a href="#javascript-promises">JavaScript Promises</a></li>
+<li><a href="#building-a-simple-server">Building a Simple Server</a></li>
+<li><a href="#using-html-forms">Using HTML Forms</a></li>
+<li><a href="#cookies">Cookies</a></li>
+<li><a href="#storing-things-on-browsers">Storing Things on Browsers</a></li>
+<li><a href="#AJAX-and-Single-Page-Applications-(SPA)">AJAX and Single-Page Applications (SPA)</a></li>
+</ol>
+<hr>
+<h2 id="html">HTML</h2>
+<ul>
+<li><strong>HTML (Hypertext Markup Language):</strong> Core language for web page content.</li>
+<li><strong>Basic Structure:</strong><pre class=" language-html"><code class="prism  language-html"><span class="token doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>Title<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+    <span class="token comment">&lt;!-- Page content --&gt;</span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+</li>
+<li><strong>Tags:</strong> Most have opening and closing; some (like <code>&lt;img&gt;</code>, <code>&lt;hr&gt;</code>) are self-closing.</li>
+<li><strong>Attributes:</strong> Placed inside the tag, e.g. <code>&lt;a href="..."&gt;</code>.</li>
+<li><strong>Head Section:</strong> Usually includes <code>&lt;title&gt;</code>, <code>&lt;style&gt;</code>, <code>&lt;script&gt;</code>, etc.</li>
+<li><strong>Body Section:</strong> Contains all visible page content.</li>
+<li><strong>Hyperlinks:</strong><pre class=" language-html"><code class="prism  language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>https://example.com<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Visit Example<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+<ul>
+<li><code>href</code> can be relative (<code>more.html</code>) or absolute (<code>https://...</code>).</li>
+</ul>
+</li>
+<li><strong>Text Elements:</strong> <code>&lt;p&gt;</code>, <code>&lt;h1&gt;</code>-<code>&lt;h6&gt;</code>, <code>&lt;b&gt;</code>, <code>&lt;i&gt;</code>, <code>&lt;u&gt;</code>, <code>&lt;big&gt;</code>, <code>&lt;small&gt;</code>, <code>&lt;sub&gt;</code>, <code>&lt;sup&gt;</code>, <code>&lt;code&gt;</code>, <code>&lt;strong&gt;</code>, <code>&lt;em&gt;</code>.</li>
+<li><strong>Lists:</strong> <code>&lt;ol&gt;...&lt;/ol&gt;</code> (ordered), <code>&lt;ul&gt;...&lt;/ul&gt;</code> (unordered), items with <code>&lt;li&gt;</code>.</li>
+<li><strong>Tables:</strong><pre class=" language-html"><code class="prism  language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>table</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>thead</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>th</span><span class="token punctuation">&gt;</span></span>Header<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>th</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>thead</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tbody</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span>Data<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tbody</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>table</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+</li>
+<li><strong>Special Characters:</strong> Use entities like <code>&amp;lt;</code>, <code>&amp;gt;</code>, <code>&amp;quot;</code>.</li>
+<li><strong>Forms:</strong> Inputs for user data, covered in-depth in <a href="#using-html-forms">Using HTML Forms</a>.</li>
+<li><strong>Validation:</strong> Use <a href="https://validator.w3.org/">https://validator.w3.org/</a> to check HTML syntax.</li>
+</ul>
+<hr>
+<h2 id="images-in-browsers">Images in Browsers</h2>
+<ul>
+<li><strong>Bitmap Images:</strong> Formats: GIF, JPEG, PNG. Pixel-based, can lose quality when scaled.</li>
+<li><strong>Vector Graphics:</strong> Mathematically defined, scalable, smaller file size, easily animated.</li>
+<li><strong>Graphics in HTML:</strong>
+<ul>
+<li><strong>Canvas:</strong> <code>&lt;canvas&gt;...&lt;/canvas&gt;</code> — bitmap graphics, drawn with JS.</li>
+<li><strong>SVG:</strong> <code>&lt;svg&gt;...&lt;/svg&gt;</code> — vector graphics, can be static or animated.</li>
+<li><strong>Image Embedding:</strong> <code>&lt;img src="picture.jpg" alt="description"&gt;</code>
+<ul>
+<li><code>src</code>: image URL/path.</li>
+<li><code>alt</code>: alternative text for accessibility.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Canvas and SVG</strong> are both suitable for web games and dynamic content.</li>
+</ul>
+<hr>
+<h2 id="css">CSS</h2>
+<ul>
+<li><strong>Purpose:</strong> Separates content (HTML) from appearance (CSS).</li>
+<li><strong>Selectors:</strong> Tag (<code>h1</code>), id (<code>#name</code>), class (<code>.highlight</code>), multiple selectors, ancestor/descendant, immediate children (<code>&gt;</code>), pseudo-classes (<code>:first-child</code>, <code>:nth-child</code>).</li>
+<li><strong>Adding CSS:</strong>
+<ul>
+<li>Inline: <code>&lt;h1 style="color:red"&gt;Text&lt;/h1&gt;</code></li>
+<li>Internal: <code>&lt;style&gt; ... &lt;/style&gt;</code> in <code>&lt;head&gt;</code></li>
+<li>External: <code>&lt;link href="style.css" rel="stylesheet"&gt;</code></li>
+</ul>
+</li>
+<li><strong>Common Properties:</strong>
+<ul>
+<li>Font: <code>font-family</code>, <code>font-size</code>, <code>font-weight</code></li>
+<li>Color: <code>color</code>, <code>background</code>, <code>background-color</code></li>
+<li>Text: <code>text-align</code>, <code>line-height</code></li>
+<li>Box Model: <code>margin</code>, <code>padding</code>, <code>width</code>, <code>height</code>, <code>border</code>, <code>border-radius</code></li>
+</ul>
+</li>
+<li><strong>Span and Div:</strong> <code>&lt;span&gt;</code> for inline, <code>&lt;div&gt;</code> for block grouping.</li>
+<li><strong>Using id/class:</strong>
+<ul>
+<li>id: <code>&lt;span id="first-name"&gt;</code></li>
+<li>class: <code>&lt;span class="highlight"&gt;</code></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="css-animations">CSS Animations</h2>
+<ul>
+<li><strong>Keyframes:</strong><pre class=" language-css"><code class="prism  language-css"><span class="token atrule"><span class="token rule">@keyframes</span> move</span> <span class="token punctuation">{</span>
+  <span class="token selector">from </span><span class="token punctuation">{</span> <span class="token property">left</span><span class="token punctuation">:</span> <span class="token number">0</span>px<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+  <span class="token selector">to   </span><span class="token punctuation">{</span> <span class="token property">left</span><span class="token punctuation">:</span> <span class="token number">50</span>px<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+</li>
+<li><strong>Applying Animation:</strong><pre class=" language-css"><code class="prism  language-css"><span class="token selector"><span class="token class">.animated</span> </span><span class="token punctuation">{</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> relative<span class="token punctuation">;</span>
+  <span class="token property">animation</span><span class="token punctuation">:</span> move <span class="token number">2</span>s<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+</li>
+<li><strong>Properties:</strong>
+<ul>
+<li><code>animation-fill-mode: forwards</code> (freeze at end)</li>
+<li>Can assign to multiple elements with different durations.</li>
+</ul>
+</li>
+<li><strong>Example:</strong><pre class=" language-html"><code class="prism  language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value"><span class="token property">position</span><span class="token punctuation">:</span>relative<span class="token punctuation">;</span> <span class="token property">animation</span><span class="token punctuation">:</span> move <span class="token number">2</span>s<span class="token punctuation">;</span></span><span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>I am bouncing!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+</li>
+</ul>
+<hr>
+<h2 id="jquery">jQuery</h2>
+<ul>
+<li><strong>What:</strong> JavaScript library for easier and more concise DOM manipulation.</li>
+<li><strong>Usage:</strong>
+<ul>
+<li>Download and link, or use CDN:<pre class=" language-html"><code class="prism  language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>https://code.jquery.com/jquery-3.7.1.min.js<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+</li>
+</ul>
+</li>
+<li><strong>Selectors:</strong>
+<ul>
+<li><code>$("#id")</code>, <code>$(".class")</code>, <code>$("tag")</code> — use CSS selectors.</li>
+</ul>
+</li>
+<li><strong>Common Methods:</strong>
+<ul>
+<li><code>.css("property", "value")</code> — change style</li>
+<li><code>.attr("attr", value)</code> — set attribute</li>
+<li><code>.html()</code>, <code>.text()</code> — get/set HTML or text content</li>
+</ul>
+</li>
+<li><strong>Differences:</strong> <code>$(...)</code> returns a jQuery object, not a DOM element.</li>
+</ul>
+<hr>
+<h2 id="jquery-events">jQuery Events</h2>
+<ul>
+<li><strong>Document ready:</strong><br>
+<code>$(document).ready(function() { ... });</code> or <code>$(function() { ... });</code></li>
+<li><strong>Event Handling:</strong>
+<ul>
+<li><code>.on("event", function() { ... })</code></li>
+<li>E.g.:<pre class=" language-js"><code class="prism  language-js"><span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"a"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">"click"</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token function">confirm</span><span class="token punctuation">(</span><span class="token string">"Leave this page?"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+</ul>
+</li>
+<li><strong>Show/Hide/Toggle:</strong>
+<ul>
+<li><code>.show()</code>, <code>.hide()</code>, <code>.toggle()</code></li>
+<li>With duration: <code>.toggle(500)</code></li>
+<li>Fade: <code>.fadeIn()</code>, <code>.fadeOut()</code>, <code>.fadeToggle()</code></li>
+<li>Slide: <code>.slideDown()</code>, <code>.slideUp()</code>, <code>.slideToggle()</code></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="handling-the-dom">Handling the DOM</h2>
+<ul>
+<li><strong>DOM Structure:</strong> Tree (not list, graph, or queue).</li>
+<li><strong>Nodes:</strong>
+<ul>
+<li>Element nodes (HTML tags)</li>
+<li>Text nodes (text content)</li>
+</ul>
+</li>
+<li><strong>Access:</strong>
+<ul>
+<li><code>document.getElementById("id")</code></li>
+<li><code>document.getElementsByTagName("tag")</code></li>
+</ul>
+</li>
+<li><strong>Tree Traversal:</strong>
+<ul>
+<li><code>node.parentNode</code>, <code>node.firstChild</code>, <code>node.childNodes[]</code>, <code>node.nextSibling</code>, <code>node.previousSibling</code>, <code>node.lastChild</code></li>
+</ul>
+</li>
+<li><strong>Whitespace Nodes:</strong> Can affect traversal (<code>childNodes</code> includes them).</li>
+<li><strong>Change Content:</strong><br>
+<code>element.innerHTML = "new content";</code></li>
+<li><strong>Change Style:</strong><br>
+<code>element.style.backgroundColor = "red";</code><br>
+(use camelCase for hyphenated properties)</li>
+</ul>
+<hr>
+<h2 id="introduction-to-javascript">Introduction to JavaScript</h2>
+<ul>
+<li><strong>Embedding JS:</strong> <code>&lt;script&gt;...&lt;/script&gt;</code></li>
+<li><strong>Order of Execution:</strong> Follows order in HTML file.</li>
+<li><strong>Variables:</strong> Use <code>let</code>, <code>const</code>, or <code>var</code> (prefer <code>let</code>/<code>const</code>)</li>
+<li><strong>Input/Output:</strong>
+<ul>
+<li><code>alert("Hello World");</code></li>
+<li><code>prompt("Your name?", "Default");</code></li>
+</ul>
+</li>
+<li><strong>String Concatenation:</strong> <code>"Hi " + name</code></li>
+<li><strong>Type Conversion:</strong> <code>parseInt()</code>, <code>parseFloat()</code></li>
+<li><strong>Check for Number:</strong> <code>isNaN(value)</code></li>
+<li><strong>Functions:</strong><pre class=" language-js"><code class="prism  language-js"><span class="token keyword">function</span> <span class="token function">name</span><span class="token punctuation">(</span>params<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span>
+</code></pre>
+</li>
+<li><strong>Events:</strong>
+<ul>
+<li>Click: <code>&lt;a onclick="fn()"&gt;...&lt;/a&gt;</code></li>
+<li>Load: <code>&lt;body onload="fn()"&gt;</code></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="using-timers">Using Timers</h2>
+<ul>
+<li><strong>setTimeout(function, ms):</strong> Run code after delay.<pre class=" language-js"><code class="prism  language-js"><span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">"Ring! Ring!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">5000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+<li><strong>clearTimeout(id):</strong> Cancel a timeout.<pre class=" language-js"><code class="prism  language-js"><span class="token keyword">let</span> id <span class="token operator">=</span> <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token operator">...</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">clearTimeout</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+<li><strong>Countdown Timer Example:</strong><pre class=" language-js"><code class="prism  language-js"><span class="token keyword">let</span> timeRemaining <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token function">countDown</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  timeRemaining<span class="token operator">--</span><span class="token punctuation">;</span>
+  document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"time"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> timeRemaining<span class="token punctuation">;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>timeRemaining <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token function">setTimeout</span><span class="token punctuation">(</span>countDown<span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token function">setTimeout</span><span class="token punctuation">(</span>countDown<span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+</ul>
+<hr>
+<h2 id="more-on-css">More on CSS</h2>
+<ul>
+<li><strong>Multiple Selectors:</strong><br>
+<code>h1, b { color: red; }</code></li>
+<li><strong>Descendant Selector:</strong><br>
+<code>ul b { color: red; }</code> (affects all descendants)</li>
+<li><strong>Immediate Child:</strong><br>
+<code>ol &gt; li &gt; b { color: red; }</code></li>
+<li><strong>Pseudo-classes:</strong>
+<ul>
+<li><code>li:first-child &gt; b { color: red; }</code></li>
+<li><code>li:nth-child(odd) &gt; b { color: red; }</code></li>
+</ul>
+</li>
+<li><strong>DOM Selection with CSS Selectors:</strong>
+<ul>
+<li><code>document.querySelector("#id")</code>, <code>document.querySelectorAll("ol b")</code></li>
+</ul>
+</li>
+<li><strong>jQuery selection:</strong>
+<ul>
+<li><code>$("ol b").html("FREE!");</code></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="svg-scalable-vector-graphics">SVG (Scalable Vector Graphics)</h2>
+<ul>
+<li><strong>What:</strong> Vector graphics language for web.</li>
+<li><strong>Usage:</strong> Standalone <code>.svg</code> file, or embedded in HTML.<pre class=" language-html"><code class="prism  language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>svg</span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>400<span class="token punctuation">"</span></span> <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>300<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span> ... <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>svg</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+</li>
+<li><strong>Coordinates:</strong> (0,0) top-left, (width,height) bottom-right.</li>
+<li><strong>Basic Elements:</strong>
+<ul>
+<li><code>&lt;line&gt;</code>, <code>&lt;rect&gt;</code>, <code>&lt;circle&gt;</code>, <code>&lt;ellipse&gt;</code>, <code>&lt;path&gt;</code>, <code>&lt;text&gt;</code></li>
+</ul>
+</li>
+<li><strong>Attributes:</strong>
+<ul>
+<li><code>stroke</code>, <code>stroke-width</code>, <code>fill</code>, <code>rx</code>, <code>ry</code> (for rounded corners)</li>
+</ul>
+</li>
+<li><strong>Path Commands:</strong> M, L, H, V, C, S, Q, T, A, Z</li>
+<li><strong>Style:</strong> via attributes or CSS.</li>
+<li><strong>Grouping:</strong> <code>&lt;g&gt;...&lt;/g&gt;</code> for organization and applying styles/animations/scripts.</li>
+<li><strong>Gradients:</strong> Define in <code>&lt;defs&gt;</code>, use via <code>fill="url(#id)"</code></li>
+</ul>
+<hr>
+<h2 id="svg-and-css-animations">SVG and CSS Animations</h2>
+<ul>
+<li><strong>Animating SVG:</strong> Use CSS keyframes.<pre class=" language-css"><code class="prism  language-css"><span class="token atrule"><span class="token rule">@keyframes</span> change-color</span> <span class="token punctuation">{</span>
+  <span class="token selector">from </span><span class="token punctuation">{</span> <span class="token property">fill</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+  <span class="token selector">to   </span><span class="token punctuation">{</span> <span class="token property">fill</span><span class="token punctuation">:</span> yellow<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token selector">rect </span><span class="token punctuation">{</span> <span class="token property">animation</span><span class="token punctuation">:</span> change-color <span class="token number">4</span>s<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+</code></pre>
+</li>
+<li><strong>Moving SVG:</strong> Use <code>transform: translate(x,y)</code> instead of <code>left</code>.</li>
+<li><strong>Percentages:</strong> Keyframes can use %, e.g. 0%, 50%, 100%.</li>
+<li><strong>Timing:</strong> Use <code>animation-timing-function: linear;</code> for constant speed.</li>
+</ul>
+<hr>
+<h2 id="controlling-css-animations">Controlling CSS Animations</h2>
+<ul>
+<li><strong>Default:</strong> CSS animations start on page load.</li>
+<li><strong>JavaScript Control:</strong>
+<ul>
+<li>Animation events: <code>animationstart</code>, <code>animationiteration</code>, <code>animationend</code></li>
+<li>Use jQuery:<br>
+<code>$(".number").on("animationend", function() { ... })</code></li>
+</ul>
+</li>
+<li><strong>Restart Animation:</strong>
+<ul>
+<li>Clear animation: <code>$(".number").css("animation-name", "none");</code></li>
+<li>Restart: <code>$(".number").css("animation-name", "spin");</code></li>
+</ul>
+</li>
+<li><strong>Example:</strong> Spinning lucky number that reveals at the end of animation.</li>
+</ul>
+<hr>
+<h2 id="more-on-svg">More on SVG</h2>
+<ul>
+<li><strong>Grouping:</strong> <code>&lt;g id="name"&gt; ... &lt;/g&gt;</code> groups elements for easier manipulation (styles, events, animation).</li>
+<li><strong>Scripted Events:</strong>
+<ul>
+<li><code>$("#left-eye").on("click", function() { ... })</code></li>
+</ul>
+</li>
+<li><strong>Animating Groups:</strong>
+<ul>
+<li>Apply animation rules to a group id.</li>
+</ul>
+</li>
+<li><strong>Gradients:</strong>
+<ul>
+<li><strong>Linear:</strong><pre class=" language-xml"><code class="prism  language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>linearGradient</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>gradient<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>stop</span> <span class="token attr-name">offset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>0<span class="token punctuation">"</span></span> <span class="token attr-name">stop-color</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>red<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>stop</span> <span class="token attr-name">offset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>1<span class="token punctuation">"</span></span> <span class="token attr-name">stop-color</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>yellow<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>linearGradient</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+</li>
+<li><strong>Radial:</strong><pre class=" language-xml"><code class="prism  language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>radialGradient</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>gradient<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>stop</span> <span class="token attr-name">offset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>0<span class="token punctuation">"</span></span> <span class="token attr-name">stop-color</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>red<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>stop</span> <span class="token attr-name">offset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>1<span class="token punctuation">"</span></span> <span class="token attr-name">stop-color</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>yellow<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>radialGradient</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+</li>
+<li>Use:<br>
+<code>&lt;rect fill="url(#gradient)" ... /&gt;</code></li>
+<li>Control direction/shape with <code>x1</code>, <code>y1</code>, <code>x2</code>, <code>y2</code>, <code>cx</code>, <code>cy</code>, <code>r</code>, <code>fx</code>, <code>fy</code>.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="introduction-to-html-canvas">Introduction to HTML Canvas</h2>
+<ul>
+<li><strong>What:</strong> <code>&lt;canvas&gt;</code> is a bitmap drawing area.</li>
+<li><strong>Usage:</strong><pre class=" language-html"><code class="prism  language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>canvas</span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>600<span class="token punctuation">"</span></span> <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>400<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>canvas</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+</li>
+<li><strong>Context:</strong>
+<ul>
+<li>2D: <code>getContext("2d")</code></li>
+<li>3D (WebGL): <code>getContext("webgl")</code></li>
+</ul>
+</li>
+<li><strong>Drawing:</strong> Use JS to draw after getting context.</li>
+</ul>
+<hr>
+<h2 id="using-html-canvas">Using HTML Canvas</h2>
+<ul>
+<li><strong>Coordinate System:</strong> (0,0) is top-left; y increases downward.</li>
+<li><strong>Rectangles:</strong>
+<ul>
+<li><code>fillRect(x, y, width, height)</code>: filled rect.</li>
+<li><code>strokeRect(...)</code>: outline.</li>
+<li><code>clearRect(...)</code>: erase.</li>
+</ul>
+</li>
+<li><strong>Styles:</strong> <code>fillStyle</code>, <code>strokeStyle</code>, <code>lineWidth</code>.</li>
+<li><strong>Lines:</strong>
+<ul>
+<li><code>moveTo(x, y)</code>, <code>lineTo(x, y)</code>, <code>stroke()</code></li>
+</ul>
+</li>
+<li><strong>Circles:</strong>
+<ul>
+<li><code>arc(x, y, radius, startAngle, endAngle)</code></li>
+</ul>
+</li>
+<li><strong>Paths:</strong>
+<ul>
+<li><code>beginPath()</code>, draw shapes, <code>fill()</code>/<code>stroke()</code></li>
+</ul>
+</li>
+<li><strong>Events:</strong>
+<ul>
+<li>No DOM for shapes; use click events on <code>&lt;canvas&gt;</code>, calculate position, use <code>isPointInPath(x, y)</code>.</li>
+</ul>
+</li>
+<li><strong>Drawing Images:</strong>
+<ul>
+<li>From <code>&lt;img&gt;</code>: <code>drawImage(img, x, y)</code></li>
+<li>From Image object:<pre class=" language-js"><code class="prism  language-js"><span class="token keyword">let</span> img <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Image</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+img<span class="token punctuation">.</span><span class="token function-variable function">onload</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> context<span class="token punctuation">.</span><span class="token function">drawImage</span><span class="token punctuation">(</span>img<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+img<span class="token punctuation">.</span>src <span class="token operator">=</span> <span class="token string">"file.png"</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+<li>Always set <code>.onload</code> <strong>before</strong> <code>.src</code> to avoid missing the event.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="javascript-arrays-and-objects">JavaScript Arrays and Objects</h2>
+<ul>
+<li><strong>let vs const vs var:</strong>
+<ul>
+<li><code>let</code>: block-scoped variable</li>
+<li><code>const</code>: block-scoped, can’t be reassigned</li>
+<li><code>var</code>: function-scoped, avoid if possible</li>
+</ul>
+</li>
+<li><strong>Arrays:</strong>
+<ul>
+<li>Create: <code>const arr = [1, 2, 3];</code></li>
+<li>Change: <code>arr[1] = 5; arr.push(6); arr.splice();</code></li>
+<li>Loop: <code>for (let i = 0; i &lt; arr.length; i++) {}</code> or <code>for (const x of arr) {}</code></li>
+<li>Spread: <code>const arr2 = [...arr, 7];</code></li>
+<li>Destructuring: <code>const [a, b] = arr;</code></li>
+</ul>
+</li>
+<li><strong>Objects:</strong>
+<ul>
+<li>Create: <code>const obj = { name: "Lok Man", age: 35 };</code></li>
+<li>Access: <code>obj.name</code> or <code>obj["name"]</code></li>
+<li>Add/Remove: <code>obj.newProp = 1; delete obj.newProp;</code></li>
+<li>Loop: <code>for (const key in obj) { ... }</code></li>
+<li>Spread: <code>const obj2 = { ...obj, extra: 2 };</code></li>
+<li>Destructure: <code>const { name, age } = obj;</code></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="a-quick-look-at-json">A Quick Look at JSON</h2>
+<ul>
+<li><strong>What:</strong> JavaScript Object Notation, a text-based data format (language-independent).</li>
+<li><strong>Format:</strong><pre class=" language-json"><code class="prism  language-json"><span class="token punctuation">{</span>
+  <span class="token string">"key"</span><span class="token punctuation">:</span> <span class="token string">"value"</span><span class="token punctuation">,</span>
+  <span class="token string">"array"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre>
+</li>
+<li><strong>Keys:</strong> Always strings (double quotes).</li>
+<li><strong>No functions or non-stringifiable values.</strong></li>
+<li><strong>Conversion:</strong>
+<ul>
+<li>To JSON: <code>JSON.stringify(obj)</code></li>
+<li>From JSON: <code>JSON.parse(jsonStr)</code></li>
+</ul>
+</li>
+<li><strong>Uses:</strong> Storing data in browsers, server, files, communication.</li>
+</ul>
+<hr>
+<h2 id="more-on-javascript-functions">More on JavaScript Functions</h2>
+<ul>
+<li><strong>Function Syntax:</strong>
+<ul>
+<li>Declaration:<pre class=" language-js"><code class="prism  language-js"><span class="token keyword">function</span> <span class="token function">name</span><span class="token punctuation">(</span>params<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span>
+</code></pre>
+</li>
+<li>Expression:<pre class=" language-js"><code class="prism  language-js"><span class="token keyword">const</span> <span class="token function-variable function">name</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>params<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span>
+</code></pre>
+</li>
+<li>Arrow function:<pre class=" language-js"><code class="prism  language-js"><span class="token keyword">const</span> <span class="token function-variable function">name</span> <span class="token operator">=</span> <span class="token punctuation">(</span>params<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span>
+<span class="token keyword">const</span> <span class="token function-variable function">double</span> <span class="token operator">=</span> x <span class="token operator">=&gt;</span> <span class="token number">2</span> <span class="token operator">*</span> x<span class="token punctuation">;</span>
+</code></pre>
+</li>
+</ul>
+</li>
+<li><strong>Inner Functions &amp; Closures:</strong><br>
+Functions can be nested; inner functions “remember” outer variables.</li>
+<li><strong>Closures:</strong> Used for private data, function factories, modules.</li>
+<li><strong>Examples:</strong>
+<ul>
+<li>Factory:<pre class=" language-js"><code class="prism  language-js"><span class="token keyword">function</span> <span class="token function">makeMultiple</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> x <span class="token operator">=&gt;</span> n <span class="token operator">*</span> x<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+<span class="token keyword">const</span> double <span class="token operator">=</span> <span class="token function">makeMultiple</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+<li>Function with state:<pre class=" language-js"><code class="prism  language-js"><span class="token keyword">function</span> <span class="token function">lightSwitch</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> status <span class="token operator">=</span> <span class="token string">"Off"</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    status <span class="token operator">=</span> <span class="token punctuation">(</span>status <span class="token operator">===</span> <span class="token string">"On"</span><span class="token punctuation">)</span> <span class="token operator">?</span> <span class="token string">"Off"</span> <span class="token punctuation">:</span> <span class="token string">"On"</span><span class="token punctuation">;</span>
+    <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">"Light is "</span> <span class="token operator">+</span> status<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">let</span> push <span class="token operator">=</span> <span class="token function">lightSwitch</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="drawing-sprites">Drawing Sprites</h2>
+<ul>
+<li><strong>Sprites:</strong> Images representing objects in games, often from a sprite sheet.</li>
+<li><strong>Sprite Sheet:</strong> Single image with multiple sprites for animation.</li>
+<li><strong>Canvas:</strong> Use <code>drawImage()</code> with source and destination rectangles.<pre class=" language-js"><code class="prism  language-js">context<span class="token punctuation">.</span><span class="token function">drawImage</span><span class="token punctuation">(</span>sheet<span class="token punctuation">,</span> sx<span class="token punctuation">,</span> sy<span class="token punctuation">,</span> sw<span class="token punctuation">,</span> sh<span class="token punctuation">,</span> dx<span class="token punctuation">,</span> dy<span class="token punctuation">,</span> dw<span class="token punctuation">,</span> dh<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+<li><strong>Enlarge Sprite:</strong> Increase the <code>dw</code>, <code>dh</code> (destination width/height).</li>
+<li><strong>No Blur:</strong> <code>context.imageSmoothingEnabled = false;</code></li>
+</ul>
+<hr>
+<h2 id="animating-sprites">Animating Sprites</h2>
+<ul>
+<li><strong>requestAnimationFrame(fn):</strong> Runs <code>fn</code> at ~60fps for smooth animation.</li>
+<li><strong>Animation Loop:</strong><pre class=" language-js"><code class="prism  language-js"><span class="token keyword">function</span> <span class="token function">doFrame</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// draw frame</span>
+  <span class="token function">requestAnimationFrame</span><span class="token punctuation">(</span>doFrame<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token function">requestAnimationFrame</span><span class="token punctuation">(</span>doFrame<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+<li><strong>Sprite Animation:</strong> Change which part of sprite sheet is drawn each frame.</li>
+<li><strong>Timing:</strong> Use timestamp parameter in <code>doFrame(timestamp)</code>.</li>
+<li><strong>Audio:</strong> Use <code>&lt;audio&gt;</code> or JS <code>new Audio("file.mp3")</code>, <code>.play()</code>, <code>.pause()</code>.</li>
+</ul>
+<hr>
+<h2 id="basic-module-pattern">Basic Module Pattern</h2>
+<ul>
+<li><strong>Problem:</strong> Too many global variables/functions when using multiple script files.</li>
+<li><strong>Solution:</strong> Module pattern uses closures to encapsulate variables/functions.<pre class=" language-js"><code class="prism  language-js"><span class="token keyword">const</span> <span class="token function-variable function">GameScore</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>initScore<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> score <span class="token operator">=</span> initScore<span class="token punctuation">;</span>
+  <span class="token keyword">const</span> <span class="token function-variable function">increase</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> score <span class="token operator">+=</span> <span class="token number">10</span><span class="token punctuation">;</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> <span class="token punctuation">{</span> increase <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> gameScore <span class="token operator">=</span> <span class="token function">GameScore</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+gameScore<span class="token punctuation">.</span><span class="token function">increase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+<li><strong>IIFE (Immediately-Invoked Function Expression):</strong><pre class=" language-js"><code class="prism  language-js"><span class="token keyword">const</span> GameScore <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>initScore<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// ...module...</span>
+  <span class="token keyword">return</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+</ul>
+<hr>
+<h2 id="basic-http-process">Basic HTTP Process</h2>
+<ul>
+<li><strong>Client-Server:</strong> Browser (client) &lt;-&gt; Server via HTTP(S).</li>
+<li><strong>Process:</strong>
+<ol>
+<li>Provide URL to browser</li>
+<li>Browser connects to server (port 80 for HTTP, 443 for HTTPS)</li>
+<li>Browser sends HTTP request (<code>GET /index.html HTTP/1.1</code>)</li>
+<li>Server responds with HTTP response (<code>HTTP/1.1 200 OK</code>)</li>
+<li>Browser renders, may send more requests for linked files.</li>
+</ol>
+</li>
+<li><strong>Request Methods:</strong> <code>GET</code>, <code>POST</code>, <code>HEAD</code></li>
+<li><strong>Headers:</strong> Both request and response can have headers.</li>
+<li><strong>Response Codes:</strong> 200 OK, 400 Bad Request, 404 Not Found, 500 Server Error</li>
+<li><strong>Content-Type (MIME Types):</strong> <code>text/html</code>, <code>image/png</code>, <code>application/json</code>, etc.</li>
+<li><strong>Linked Files:</strong> Browser requests CSS, JS, images as needed.</li>
+</ul>
+<hr>
+<h2 id="getting-started-with-node.js">Getting Started With Node.js</h2>
+<ul>
+<li><strong>What:</strong> JavaScript runtime for running JS outside a browser.</li>
+<li><strong>Install:</strong> Download from <a href="https://nodejs.org/">https://nodejs.org/</a></li>
+<li><strong>REPL:</strong> Run <code>node</code> in terminal for interactive JS.</li>
+<li><strong>Run File:</strong> <code>node file.js</code></li>
+<li><strong>NPM:</strong> Node Package Manager for installing modules.
+<ul>
+<li><code>npm install express</code></li>
+</ul>
+</li>
+<li><strong>Use Module:</strong><pre class=" language-js"><code class="prism  language-js"><span class="token keyword">const</span> express <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"express"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+</ul>
+<hr>
+<h2 id="javascript-promises">JavaScript Promises</h2>
+<ul>
+<li><strong>Asynchronous Code:</strong> JS uses event/callbacks for async operations.</li>
+<li><strong>Problems with Callbacks:</strong> Hard to manage, nesting (“callback hell”).</li>
+<li><strong>Promise:</strong> Object representing asynchronous operation.
+<ul>
+<li><code>then(success)</code>, <code>catch(error)</code></li>
+</ul>
+</li>
+<li><strong>Example:</strong><pre class=" language-js"><code class="prism  language-js">myimage<span class="token punctuation">.</span><span class="token function">decode</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token comment">// success</span>
+  <span class="token punctuation">.</span><span class="token keyword">catch</span><span class="token punctuation">(</span>error <span class="token operator">=&gt;</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// error</span>
+</code></pre>
+</li>
+<li><strong>Chaining:</strong> <code>.then()</code> returns a promise, so you can chain multiple.</li>
+<li><strong>Async/Await:</strong><pre class=" language-js"><code class="prism  language-js"><span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">loadAll</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">await</span> <span class="token function">loadImage</span><span class="token punctuation">(</span><span class="token operator">...</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment">// next</span>
+<span class="token punctuation">}</span>
+<span class="token function">loadAll</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+<li><strong>Promise.all():</strong> Wait for all promises to finish.<pre class=" language-js"><code class="prism  language-js">Promise<span class="token punctuation">.</span><span class="token function">all</span><span class="token punctuation">(</span><span class="token punctuation">[</span>p1<span class="token punctuation">,</span> p2<span class="token punctuation">,</span> p3<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+</ul>
+<hr>
+<h2 id="building-a-simple-server">Building a Simple Server</h2>
+<ul>
+<li><strong>Express JS:</strong><pre class=" language-js"><code class="prism  language-js"><span class="token keyword">const</span> express <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"express"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> app <span class="token operator">=</span> <span class="token function">express</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+app<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token number">8000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+<li><strong>Static Files:</strong><br>
+<code>app.use(express.static('public'));</code></li>
+<li><strong>JSON Response:</strong><pre class=" language-js"><code class="prism  language-js">app<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string">"/serverinfo"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  res<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token string">"First Node.js Server"</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+<li><strong>Route Matching:</strong><br>
+<code>app.get('/admin', ...)</code> matches <code>/admin</code>, not <code>/adminpage</code>.</li>
+</ul>
+<hr>
+<h2 id="using-html-forms">Using HTML Forms</h2>
+<ul>
+<li><strong>Purpose:</strong> Send data to server.</li>
+<li><strong>Form Example:</strong><pre class=" language-html"><code class="prism  language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">method</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>get<span class="token punctuation">"</span></span> <span class="token attr-name">action</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>/target<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>firstname<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>submit<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+</li>
+<li><strong>GET vs POST:</strong>
+<ul>
+<li>GET: data in URL query string</li>
+<li>POST: data in request body</li>
+</ul>
+</li>
+<li><strong>Form Elements:</strong> text, password, textarea, checkbox, radio, select, hidden, email, url, number, range, date, time, color</li>
+<li><strong>Attributes:</strong> <code>name</code>, <code>value</code>, <code>maxlength</code>, <code>placeholder</code>, <code>required</code>, <code>autofocus</code></li>
+<li><strong>Query String Example:</strong><br>
+<code>/target?firstname=Amy&amp;lastname=Chan</code></li>
+<li><strong>Express:</strong> Access with <code>req.query</code>.</li>
+</ul>
+<hr>
+<h2 id="cookies">Cookies</h2>
+<ul>
+<li><strong>What:</strong> Small text data stored in browser.</li>
+<li><strong>Usage:</strong> Session, tracking, storing preferences.</li>
+<li><strong>Create (JS):</strong><br>
+<code>document.cookie = "name=Paul";</code></li>
+<li><strong>Read:</strong><br>
+<code>document.cookie</code></li>
+<li><strong>Expiry:</strong><br>
+<code>expires=Sat, 01 Jan 2050 00:00:00 GMT</code>
+<ul>
+<li>Delete: Expiry in the past.</li>
+</ul>
+</li>
+<li><strong>From Server:</strong>
+<ul>
+<li>Set-Cookie header in HTTP response.</li>
+<li>Delete: Set-Cookie with expiry in the past.</li>
+</ul>
+</li>
+<li><strong>Send to Server:</strong> Sent as Cookie header in HTTP request.</li>
+<li><strong>Express:</strong> Use <code>cookie-parser</code> for parsing cookies.<pre class=" language-js"><code class="prism  language-js">app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token function">cookieParser</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+app<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string">"/setcookie"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  res<span class="token punctuation">.</span><span class="token function">cookie</span><span class="token punctuation">(</span><span class="token string">"username"</span><span class="token punctuation">,</span> <span class="token string">"pchan"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  res<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span>req<span class="token punctuation">.</span>cookies<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+<li><strong>First-party vs Third-party Cookies:</strong>
+<ul>
+<li>Third-party: set by other domains (e.g. via <code>&lt;iframe&gt;</code>).</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="storing-things-on-browsers">Storing Things on Browsers</h2>
+<ul>
+<li><strong>Cookies:</strong> Small (4KB per domain), sent to server, can be controlled by server.</li>
+<li><strong>localStorage/sessionStorage:</strong>
+<ul>
+<li>Store key/value pairs (text or JSON).</li>
+<li><code>localStorage</code>: persistent (until cleared)</li>
+<li><code>sessionStorage</code>: per-tab/session</li>
+<li>Up to 5MB.</li>
+<li>Not sent to server automatically.</li>
+</ul>
+</li>
+<li><strong>API:</strong><pre class=" language-js"><code class="prism  language-js">localStorage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span><span class="token string">"name"</span><span class="token punctuation">,</span> <span class="token string">"Paul"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> name <span class="token operator">=</span> localStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token string">"name"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+localStorage<span class="token punctuation">.</span><span class="token function">removeItem</span><span class="token punctuation">(</span><span class="token string">"name"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+localStorage<span class="token punctuation">.</span><span class="token function">clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+<li><strong>Remember Me Example:</strong>
+<ul>
+<li>Save username on sign-in with checkbox.</li>
+<li>Load username from localStorage on page load.</li>
+</ul>
+</li>
+<li><strong>Sign-in Status Example:</strong>
+<ul>
+<li>Use sessionStorage to remember sign-in status in a session.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="ajax-and-single-page-applications-spa">AJAX and Single-Page Applications (SPA)</h2>
+<h3 id="what-is-ajax">What is AJAX?</h3>
+<ul>
+<li><strong>AJAX</strong> (Asynchronous JavaScript and XML) allows the browser to make HTTP requests and receive responses using JavaScript, without reloading the whole page.</li>
+<li>Despite the name, <strong>JSON</strong> is far more commonly used than XML for data.</li>
+<li>AJAX enables updating <strong>portions</strong> of a web page rather than the entire page, supporting dynamic web applications.</li>
+</ul>
+<h3 id="ajax-process">AJAX Process</h3>
+<ul>
+<li><strong>Traditional HTTP:</strong> Browser requests a full HTML page; server responds with the full page, including all assets.</li>
+<li><strong>AJAX:</strong> JavaScript initiates an HTTP request (GET/POST) in the background, receives data (usually JSON), and updates the page accordingly.</li>
+<li><strong>Asynchronous:</strong> The page continues to function while waiting for the server’s response.</li>
+</ul>
+<h4 id="making-ajax-requests-with-fetch">Making AJAX Requests (with <code>fetch</code>)</h4>
+<ul>
+<li><strong>GET Request:</strong><pre class=" language-js"><code class="prism  language-js"><span class="token function">fetch</span><span class="token punctuation">(</span><span class="token string">"https://example.com/api/data"</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>response <span class="token operator">=&gt;</span> response<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>data <span class="token operator">=&gt;</span> <span class="token punctuation">{</span> <span class="token comment">/* process data */</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token keyword">catch</span><span class="token punctuation">(</span>error <span class="token operator">=&gt;</span> <span class="token punctuation">{</span> <span class="token comment">/* handle errors */</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+<li><strong>POST Request:</strong><pre class=" language-js"><code class="prism  language-js"><span class="token function">fetch</span><span class="token punctuation">(</span><span class="token string">"/api/endpoint"</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  method<span class="token punctuation">:</span> <span class="token string">"POST"</span><span class="token punctuation">,</span>
+  headers<span class="token punctuation">:</span> <span class="token punctuation">{</span> <span class="token string">"Content-Type"</span><span class="token punctuation">:</span> <span class="token string">"application/json"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  body<span class="token punctuation">:</span> JSON<span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span><span class="token punctuation">{</span> key<span class="token punctuation">:</span> <span class="token string">"value"</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>response <span class="token operator">=&gt;</span> response<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>data <span class="token operator">=&gt;</span> <span class="token punctuation">{</span> <span class="token comment">/* process data */</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+<li><strong>The <code>fetch()</code> function returns a Promise</strong>; you chain <code>.then()</code> to process the response.</li>
+<li><strong>Response body:</strong> Use <code>response.json()</code> or <code>response.text()</code>, both return Promises.</li>
+</ul>
+<h4 id="chaining-promises">Chaining Promises</h4>
+<ul>
+<li>Example:<pre class=" language-js"><code class="prism  language-js"><span class="token function">fetch</span><span class="token punctuation">(</span><span class="token string">"https://api.example.com/data"</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>response <span class="token operator">=&gt;</span> response<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>json <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"#result"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span>JSON<span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>json<span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token string">" "</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token keyword">catch</span><span class="token punctuation">(</span>error <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"#result"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+<li>Always return the promise from <code>.json()</code> to continue chaining.</li>
+</ul>
+<h4 id="express-server-handling-ajax">Express Server Handling AJAX</h4>
+<ul>
+<li><strong>Enable JSON support:</strong><pre class=" language-js"><code class="prism  language-js">app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>express<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+<li><strong>Read JSON in POST body:</strong><pre class=" language-js"><code class="prism  language-js">app<span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span><span class="token string">"/api/something"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> data <span class="token operator">=</span> req<span class="token punctuation">.</span>body<span class="token punctuation">;</span> <span class="token comment">// Already parsed as JS object</span>
+  res<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">{</span> some<span class="token punctuation">:</span> <span class="token string">"response"</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+</ul>
+<hr>
+<h3 id="single-page-applications-spa-vs.-multi-page-applications-mpa">Single-Page Applications (SPA) vs. Multi-Page Applications (MPA)</h3>
+<h4 id="mpa-multi-page-application">MPA (Multi-Page Application)</h4>
+<ul>
+<li>Traditional: each navigation loads a new HTML page from the server.</li>
+<li><strong>Issues:</strong>
+<ul>
+<li>Duplicate content transferred each time</li>
+<li>Slower response to updates</li>
+<li>Simpler to develop</li>
+<li>Good for SEO, better server-side security</li>
+</ul>
+</li>
+</ul>
+<h4 id="spa-single-page-application">SPA (Single-Page Application)</h4>
+<ul>
+<li>Loads a single HTML page initially.</li>
+<li>All updates happen via AJAX (using fetch), updating only the relevant part of the page.</li>
+<li><strong>Benefits:</strong>
+<ul>
+<li>Faster, smoother user experience for dynamic applications</li>
+<li>Can create rich, sophisticated interfaces</li>
+</ul>
+</li>
+<li><strong>Drawbacks:</strong>
+<ul>
+<li>Hard for search engines to index</li>
+<li>Heavy workload on the front end</li>
+<li>More responsibility on the client for security/logic</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="spa-example-student-manager">SPA Example: Student Manager</h3>
+<h4 id="structure">Structure</h4>
+<ul>
+<li><strong>Files:</strong>
+<ul>
+<li><code>manager.html</code>: Frontend HTML page, uses JS to perform AJAX.</li>
+<li><code>server.js</code>: Express server, handles AJAX endpoints and reads/writes data.</li>
+<li><code>students.json</code>: JSON file storing student data.</li>
+</ul>
+</li>
+</ul>
+<h4 id="system-overview">System Overview</h4>
+<ul>
+<li>Initial page load: browser downloads <code>manager.html</code> and assets.</li>
+<li><strong>User actions</strong> (add/change/delete student) trigger AJAX requests (via <code>fetch</code>).</li>
+<li><strong>Server responds</strong> with updated data; client updates the table in place.</li>
+</ul>
+<h4 id="example-adding-a-student-client-side">Example: Adding a Student (Client Side)</h4>
+<ul>
+<li>Dynamically build new table row using jQuery:<pre class=" language-js"><code class="prism  language-js"><span class="token keyword">const</span> student <span class="token operator">=</span> <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"&lt;tr&gt;&lt;/tr&gt;"</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"&lt;td&gt;"</span> <span class="token operator">+</span> id <span class="token operator">+</span> <span class="token string">"&lt;/td&gt;"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"&lt;td&gt;&lt;input id='name-"</span> <span class="token operator">+</span> id <span class="token operator">+</span> <span class="token string">"' value='"</span> <span class="token operator">+</span> name <span class="token operator">+</span> <span class="token string">"'&gt;&lt;/td&gt;"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"&lt;td&gt;&lt;input id='year-"</span> <span class="token operator">+</span> id <span class="token operator">+</span> <span class="token string">"' value='"</span> <span class="token operator">+</span> year <span class="token operator">+</span> <span class="token string">"'&gt;&lt;/td&gt;"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"&lt;td&gt;&lt;/td&gt;"</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"&lt;button class='change' data-id='"</span> <span class="token operator">+</span> id <span class="token operator">+</span> <span class="token string">"'&gt;Change&lt;/button&gt;"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"&lt;span&gt;&amp;nbsp;&lt;/span&gt;"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"&lt;button class='delete' data-id='"</span> <span class="token operator">+</span> id <span class="token operator">+</span> <span class="token string">"'&gt;Delete&lt;/button&gt;"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"#table-body"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span>student<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+</ul>
+<h4 id="example-server-side-student-storage">Example: Server-side Student Storage</h4>
+<ul>
+<li><strong>students.json</strong> format:<pre class=" language-json"><code class="prism  language-json"><span class="token punctuation">{</span>
+  <span class="token string">"20000000"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span> <span class="token string">"name"</span><span class="token punctuation">:</span> <span class="token string">"Chan Mei Ho"</span><span class="token punctuation">,</span> <span class="token string">"year"</span><span class="token punctuation">:</span> <span class="token number">3</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token string">"20000001"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span> <span class="token string">"name"</span><span class="token punctuation">:</span> <span class="token string">"Chan Tai Man"</span><span class="token punctuation">,</span> <span class="token string">"year"</span><span class="token punctuation">:</span> <span class="token number">3</span> <span class="token punctuation">}</span>
+  <span class="token comment">// More students...</span>
+<span class="token punctuation">}</span>
+</code></pre>
+</li>
+<li><strong>Node.js File Operations:</strong><pre class=" language-js"><code class="prism  language-js"><span class="token keyword">const</span> fs <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"fs"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// Read</span>
+<span class="token keyword">const</span> students <span class="token operator">=</span> JSON<span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>fs<span class="token punctuation">.</span><span class="token function">readFileSync</span><span class="token punctuation">(</span><span class="token string">"students.json"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// Write</span>
+fs<span class="token punctuation">.</span><span class="token function">writeFileSync</span><span class="token punctuation">(</span><span class="token string">"students.json"</span><span class="token punctuation">,</span> JSON<span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>students<span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token string">" "</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+<li><strong>Endpoints:</strong>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Path</th>
+<th>Request Body</th>
+<th>Response Body</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>/students/all</td>
+<td>-</td>
+<td>JSON of all students</td>
+</tr>
+<tr>
+<td>POST</td>
+<td>/students/add</td>
+<td>{id, name, year}</td>
+<td>{success: true} or {error}</td>
+</tr>
+<tr>
+<td>POST</td>
+<td>/students/change</td>
+<td>{id, name, year}</td>
+<td>{success: true} or {error}</td>
+</tr>
+<tr>
+<td>POST</td>
+<td>/students/delete</td>
+<td>{id}</td>
+<td>{success: true}</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<h4 id="sample-endpoint-code-express">Sample Endpoint Code (Express)</h4>
+<pre class=" language-js"><code class="prism  language-js">app<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string">"/students/all"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> students <span class="token operator">=</span> JSON<span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>fs<span class="token punctuation">.</span><span class="token function">readFileSync</span><span class="token punctuation">(</span><span class="token string">"students.json"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  res<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span>students<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+app<span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span><span class="token string">"/students/add"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> <span class="token punctuation">{</span> id<span class="token punctuation">,</span> name<span class="token punctuation">,</span> year <span class="token punctuation">}</span> <span class="token operator">=</span> req<span class="token punctuation">.</span>body<span class="token punctuation">;</span>
+  <span class="token keyword">const</span> students <span class="token operator">=</span> JSON<span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>fs<span class="token punctuation">.</span><span class="token function">readFileSync</span><span class="token punctuation">(</span><span class="token string">"students.json"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>students<span class="token punctuation">[</span>id<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    res<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">{</span> error<span class="token punctuation">:</span> <span class="token string">"ID already exists"</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  students<span class="token punctuation">[</span>id<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span> name<span class="token punctuation">,</span> year <span class="token punctuation">}</span><span class="token punctuation">;</span>
+  fs<span class="token punctuation">.</span><span class="token function">writeFileSync</span><span class="token punctuation">(</span><span class="token string">"students.json"</span><span class="token punctuation">,</span> JSON<span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>students<span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token string">" "</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  res<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">{</span> success<span class="token punctuation">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+app<span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span><span class="token string">"/students/change"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> <span class="token punctuation">{</span> id<span class="token punctuation">,</span> name<span class="token punctuation">,</span> year <span class="token punctuation">}</span> <span class="token operator">=</span> req<span class="token punctuation">.</span>body<span class="token punctuation">;</span>
+  <span class="token keyword">const</span> students <span class="token operator">=</span> JSON<span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>fs<span class="token punctuation">.</span><span class="token function">readFileSync</span><span class="token punctuation">(</span><span class="token string">"students.json"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>students<span class="token punctuation">[</span>id<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    res<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">{</span> error<span class="token punctuation">:</span> <span class="token string">"ID does not exist"</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  students<span class="token punctuation">[</span>id<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span> name<span class="token punctuation">,</span> year <span class="token punctuation">}</span><span class="token punctuation">;</span>
+  fs<span class="token punctuation">.</span><span class="token function">writeFileSync</span><span class="token punctuation">(</span><span class="token string">"students.json"</span><span class="token punctuation">,</span> JSON<span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>students<span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token string">" "</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  res<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">{</span> success<span class="token punctuation">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+app<span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span><span class="token string">"/students/delete"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> <span class="token punctuation">{</span> id <span class="token punctuation">}</span> <span class="token operator">=</span> req<span class="token punctuation">.</span>body<span class="token punctuation">;</span>
+  <span class="token keyword">const</span> students <span class="token operator">=</span> JSON<span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>fs<span class="token punctuation">.</span><span class="token function">readFileSync</span><span class="token punctuation">(</span><span class="token string">"students.json"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">delete</span> students<span class="token punctuation">[</span>id<span class="token punctuation">]</span><span class="token punctuation">;</span>
+  fs<span class="token punctuation">.</span><span class="token function">writeFileSync</span><span class="token punctuation">(</span><span class="token string">"students.json"</span><span class="token punctuation">,</span> JSON<span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>students<span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token string">" "</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  res<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">{</span> success<span class="token punctuation">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<hr>
+<h3 id="summary">Summary</h3>
+<ul>
+<li><strong>AJAX</strong> enables partial page updates and dynamic web apps.</li>
+<li><strong>fetch()</strong> is the modern way to perform AJAX; always returns a Promise.</li>
+<li><strong>SPA</strong> loads a single HTML page and fetches subsequent data with AJAX; provides fast, interactive user experiences.</li>
+<li><strong>Server endpoints</strong> commonly use JSON for data exchange.</li>
+<li><strong>File I/O</strong> in Node.js uses <code>fs</code> for reading and writing JSON as the application’s “database”.</li>
+</ul>
+<hr>
+<h2 id="web-authentication">Web Authentication</h2>
+<h3 id="what-is-web-authentication">What is Web Authentication?</h3>
+<ul>
+<li>The process of verifying a user’s identity when accessing a web application.</li>
+<li>Required for features such as user accounts, personalization, and access control.</li>
+</ul>
+<h3 id="two-main-approaches">Two Main Approaches</h3>
+<ol>
+<li><strong>Web Sessions (Session-based Authentication)</strong></li>
+<li><strong>JWT (JSON Web Token) Authentication</strong></li>
+</ol>
+<hr>
+<h3 id="web-sessions-session-based-authentication">1. Web Sessions (Session-based Authentication)</h3>
+<h4 id="why-sessions">Why Sessions?</h4>
+<ul>
+<li>HTTP is <strong>stateless</strong>: the server does not know if two requests come from the same user.</li>
+<li>Authentication must:
+<ol>
+<li>Identify user upon login (first HTTP request, e.g., via username/password).</li>
+<li>Remember user identity for subsequent requests <strong>without resending credentials</strong> every time.</li>
+</ol>
+</li>
+</ul>
+<h4 id="how-sessions-work">How Sessions Work</h4>
+<ul>
+<li>When a user first logs in, the server creates a <strong>session</strong> and sends a <strong>session cookie</strong> to the browser.</li>
+<li>The browser includes this cookie in subsequent HTTP requests.</li>
+<li>The server uses the session id (cookie value) to look up session data (user info, etc.).</li>
+</ul>
+<h4 id="session-cookie">Session Cookie</h4>
+<ul>
+<li>Looks like a regular cookie, value is a random string (session id).</li>
+<li>Example:<pre><code>s:rL8FypesDigtTTpgLnc039gaUffvqz-U...
+</code></pre>
+</li>
+<li>Each browser (user) gets a different session id.</li>
+</ul>
+<h4 id="session-data">Session Data</h4>
+<ul>
+<li>Stored <strong>server-side</strong> (in memory or a database).</li>
+<li>Contains data such as username, authentication status, etc.</li>
+<li>Not accessible by the browser.</li>
+</ul>
+<h4 id="session-lifetime">Session Lifetime</h4>
+<ul>
+<li>Controlled by the session cookie’s expiry time.</li>
+<li>If no expiry is set, session ends when the browser closes.</li>
+<li>Can set a lifetime (e.g., 5 minutes).</li>
+</ul>
+<h4 id="express-session-example">Express Session Example</h4>
+<ul>
+<li>Install package:<pre><code>npm install express-session
+</code></pre>
+</li>
+<li>Use middleware:<pre class=" language-js"><code class="prism  language-js"><span class="token keyword">const</span> session <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"express-session"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token function">session</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  secret<span class="token punctuation">:</span> <span class="token string">"secretkey"</span><span class="token punctuation">,</span>
+  resave<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+  saveUninitialized<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+  rolling<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  cookie<span class="token punctuation">:</span> <span class="token punctuation">{</span> maxAge<span class="token punctuation">:</span> <span class="token number">300000</span> <span class="token punctuation">}</span> <span class="token comment">// 5 minutes</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+<li>Access session in endpoints:<pre class=" language-js"><code class="prism  language-js"><span class="token comment">// Write</span>
+req<span class="token punctuation">.</span>session<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">"Paul"</span><span class="token punctuation">;</span>
+<span class="token comment">// Read</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>req<span class="token punctuation">.</span>session<span class="token punctuation">.</span>name<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span>
+<span class="token comment">// Destroy</span>
+req<span class="token punctuation">.</span>session<span class="token punctuation">.</span><span class="token function">destroy</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// Remove a value (but not the session itself)</span>
+<span class="token keyword">delete</span> req<span class="token punctuation">.</span>session<span class="token punctuation">.</span>name<span class="token punctuation">;</span>
+</code></pre>
+</li>
+</ul>
+<h4 id="typical-sign-in-flow-with-sessions">Typical Sign-In Flow (with Sessions)</h4>
+<ol>
+<li>Show sign-in form.</li>
+<li>User submits credentials.</li>
+<li>Server verifies credentials, stores authentication result in session data.</li>
+<li>Server sends response; browser stores session cookie.</li>
+<li>Server checks session data on each request to validate authentication.</li>
+<li>Sign-off: destroy session, show sign-in form again.</li>
+</ol>
+<h4 id="analogy">Analogy</h4>
+<ul>
+<li>Like a UST ID card: once issued, used for verification until revoked or expired.</li>
+</ul>
+<hr>
+<h3 id="jwt-json-web-token-authentication">2. JWT (JSON Web Token) Authentication</h3>
+<h4 id="why-jwt">Why JWT?</h4>
+<ul>
+<li>Session-based authentication requires server-side storage (session database).</li>
+<li>JWT is <strong>stateless</strong>: all information is bundled into a signed token, no need for server-side session storage.</li>
+<li>Good for scaling, microservices, and APIs.</li>
+</ul>
+<h4 id="what-is-a-jwt">What is a JWT?</h4>
+<ul>
+<li>A <strong>self-contained</strong>, text-based token that contains user info and is cryptographically signed.</li>
+<li>Not encrypted; do <strong>not</strong> include sensitive data.</li>
+<li>Example:<pre><code>eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+</code></pre>
+</li>
+</ul>
+<h4 id="how-jwt-works">How JWT Works</h4>
+<ol>
+<li><strong>Signing:</strong> Server generates a JWT using user data + a secret key + expiry time.</li>
+<li><strong>Verification:</strong> Server verifies JWT using the same secret key.</li>
+<li><strong>Use:</strong> JWT is sent to the browser (usually via cookie or HTTP header). Browser includes JWT in subsequent requests.</li>
+</ol>
+<h4 id="express-jwt-example">Express JWT Example</h4>
+<ul>
+<li>Install package:<pre><code>npm install jsonwebtoken
+</code></pre>
+</li>
+<li>Import and use:<pre class=" language-js"><code class="prism  language-js"><span class="token keyword">const</span> jwt <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"jsonwebtoken"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> secretKey <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"crypto"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">randomBytes</span><span class="token punctuation">(</span><span class="token number">48</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token string">"hex"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Generate token</span>
+<span class="token keyword">const</span> token <span class="token operator">=</span> jwt<span class="token punctuation">.</span><span class="token function">sign</span><span class="token punctuation">(</span><span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token string">"Paul"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> secretKey<span class="token punctuation">,</span> <span class="token punctuation">{</span> expiresIn<span class="token punctuation">:</span> <span class="token string">"5m"</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Verify token</span>
+<span class="token keyword">const</span> data <span class="token operator">=</span> jwt<span class="token punctuation">.</span><span class="token function">verify</span><span class="token punctuation">(</span>token<span class="token punctuation">,</span> secretKey<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+<li>Use a <strong>random secret key</strong> for security:<pre class=" language-js"><code class="prism  language-js"><span class="token keyword">const</span> key <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"crypto"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">randomBytes</span><span class="token punctuation">(</span><span class="token number">48</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token string">"hex"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+</ul>
+<h4 id="typical-sign-in-flow-with-jwt">Typical Sign-In Flow (with JWT)</h4>
+<ol>
+<li>Show sign-in form.</li>
+<li>User submits credentials.</li>
+<li>Server verifies credentials, creates a JWT with user info, signs it, and sends it to the browser (often as a cookie).</li>
+<li>Browser includes JWT in subsequent requests.</li>
+<li>Server verifies JWT on each request to authenticate the user.</li>
+<li>Sign-off: server tells browser to delete JWT cookie; user must sign in again.</li>
+</ol>
+<h4 id="jwt-expiry">JWT Expiry</h4>
+<ul>
+<li>Expiry is set at token creation (e.g., 5 minutes).</li>
+<li>Cannot “kill” a JWT after it’s issued except by blacklisting on the server.</li>
+</ul>
+<h4 id="pros-and-cons">Pros and Cons</h4>
+<ul>
+<li><strong>Sessions:</strong>
+<ul>
+<li>
+<ul>
+<li>Simpler to implement, server can revoke sessions at any time</li>
+</ul>
+</li>
+<li>– Requires server-side storage/database for session data</li>
+</ul>
+</li>
+<li><strong>JWT:</strong>
+<ul>
+<li>
+<ul>
+<li>Stateless, easy to scale, no server-side lookup needed</li>
+</ul>
+</li>
+<li>– Cannot revoke tokens until expiry, token size can be large</li>
+</ul>
+</li>
+</ul>
+<h4 id="best-practices">Best Practices</h4>
+<ul>
+<li>Use sessions for classic web apps where server-side state is manageable.</li>
+<li>Use JWT for APIs, SPAs, microservices.</li>
+<li>Do <strong>not</strong> put sensitive data in JWT payload.</li>
+</ul>
+<hr>
+<p><strong>Summary Table:</strong></p>
+
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Session-based</th>
+<th>JWT-based</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Server-side?</td>
+<td>Stores session data</td>
+<td>No server storage</td>
+</tr>
+<tr>
+<td>Cookie?</td>
+<td>Sends session id in cookie</td>
+<td>Sends JWT in cookie or header</td>
+</tr>
+<tr>
+<td>Revocable?</td>
+<td>Yes</td>
+<td>Only at expiry time</td>
+</tr>
+<tr>
+<td>Scaling</td>
+<td>More complex</td>
+<td>Easy, stateless</td>
+</tr>
+<tr>
+<td>Data Storage</td>
+<td>Server memory/DB</td>
+<td>In the token itself</td>
+</tr>
+</tbody>
+</table><hr>
+<h2 id="real-time-communication-with-websocket">Real-time Communication with WebSocket</h2>
+<h3 id="why-websocket">Why WebSocket?</h3>
+<ul>
+<li>
+<p><strong>HTTP/AJAX:</strong> Traditional pattern is <strong>request-response</strong>; the connection is closed after each request. Even with AJAX, the browser must poll for updates (client pull), which:</p>
+<ul>
+<li>Wastes bandwidth (polls even if nothing changed)</li>
+<li>Has high overhead for frequent updates</li>
+<li>Server cannot push data to clients</li>
+</ul>
+</li>
+<li>
+<p><strong>WebSocket:</strong></p>
+<ul>
+<li>Provides a <strong>persistent, bi-directional communication</strong> channel between browser and server</li>
+<li>Runs over HTTP (ws:// or secure wss://), so it passes through most firewalls</li>
+<li>Very low overhead (max 14 bytes per message)</li>
+<li>Server <strong>can push</strong> updates to clients at any time</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="how-websocket-works">How WebSocket Works</h3>
+<ol>
+<li>
+<p><strong>Handshake:</strong></p>
+<ul>
+<li>Browser sends HTTP request with headers to “upgrade” connection</li>
+<li>Example headers:<pre><code>Connection: Upgrade
+Upgrade: websocket
+</code></pre>
+</li>
+<li>Server responds with <code>HTTP/1.1 101 Switching Protocols</code></li>
+<li>Connection is “upgraded” and stays open</li>
+</ul>
+</li>
+<li>
+<p><strong>Data Transfer:</strong></p>
+<ul>
+<li>Both browser and server can send messages (events) at any time</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="using-websocket-in-node.js-with-socket.io">Using WebSocket in Node.js with <a href="http://Socket.IO">Socket.IO</a></h3>
+<h4 id="installation">Installation</h4>
+<pre class=" language-bash"><code class="prism  language-bash"><span class="token function">npm</span> <span class="token function">install</span> socket.io
+</code></pre>
+<h4 id="server-setup-express--socket.io">Server Setup (Express + <a href="http://Socket.IO">Socket.IO</a>)</h4>
+<pre class=" language-js"><code class="prism  language-js"><span class="token keyword">const</span> express <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'express'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> <span class="token punctuation">{</span> createServer <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"http"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> <span class="token punctuation">{</span> Server <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"socket.io"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> app <span class="token operator">=</span> <span class="token function">express</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> httpServer <span class="token operator">=</span> <span class="token function">createServer</span><span class="token punctuation">(</span>app<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> io <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Server</span><span class="token punctuation">(</span>httpServer<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+httpServer<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token number">8000</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// instead of app.listen</span>
+</code></pre>
+<h4 id="core-server-side-events">Core Server-Side Events</h4>
+<ul>
+<li>
+<p><strong>Connection Event:</strong><br>
+Called for every new browser connection. <code>socket</code> represents that connection.</p>
+<pre class=" language-js"><code class="prism  language-js">io<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">"connection"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>socket<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token comment">// handle events here...</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+<li>
+<p><strong>Sending Message to One Browser:</strong></p>
+<pre class=" language-js"><code class="prism  language-js">socket<span class="token punctuation">.</span><span class="token function">emit</span><span class="token punctuation">(</span><span class="token string">"eventName"</span><span class="token punctuation">,</span> data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+<li>
+<p><strong>Broadcasting to All Browsers:</strong></p>
+<pre class=" language-js"><code class="prism  language-js">io<span class="token punctuation">.</span><span class="token function">emit</span><span class="token punctuation">(</span><span class="token string">"eventName"</span><span class="token punctuation">,</span> data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+<li>
+<p><strong>Receiving Messages from the Browser:</strong></p>
+<pre class=" language-js"><code class="prism  language-js">socket<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">"eventName"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>data<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+<li>
+<p><strong>Handling Disconnection:</strong></p>
+<pre class=" language-js"><code class="prism  language-js">socket<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">"disconnect"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>reason<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+</ul>
+<hr>
+<h3 id="using-websocket-in-the-browser-with-socket.io">Using WebSocket in the Browser (with <a href="http://Socket.IO">Socket.IO</a>)</h3>
+<h4 id="including-the-library">Including the Library</h4>
+<pre class=" language-html"><code class="prism  language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>/socket.io/socket.io.min.js<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+<h4 id="connecting-to-the-server">Connecting to the Server</h4>
+<pre class=" language-js"><code class="prism  language-js"><span class="token keyword">const</span> socket <span class="token operator">=</span> <span class="token function">io</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// same domain</span>
+<span class="token comment">// or specify URL: io('http://server:port')</span>
+</code></pre>
+<h4 id="sending-and-receiving">Sending and Receiving</h4>
+<pre class=" language-js"><code class="prism  language-js"><span class="token comment">// Send</span>
+socket<span class="token punctuation">.</span><span class="token function">emit</span><span class="token punctuation">(</span><span class="token string">"eventName"</span><span class="token punctuation">,</span> data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Receive</span>
+socket<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">"eventName"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>data<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Disconnect</span>
+socket<span class="token punctuation">.</span><span class="token function">disconnect</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<hr>
+<h3 id="example-real-time-stock-ticker">Example: Real-Time Stock Ticker</h3>
+<h4 id="server-send-updates-every-second">Server: Send Updates Every Second</h4>
+<pre class=" language-js"><code class="prism  language-js"><span class="token keyword">const</span> <span class="token function-variable function">ticker</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>playing <span class="token operator">&amp;&amp;</span> socket<span class="token punctuation">.</span>connected<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> data <span class="token operator">=</span> <span class="token punctuation">{</span> price<span class="token punctuation">,</span> change <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    socket<span class="token punctuation">.</span><span class="token function">emit</span><span class="token punctuation">(</span><span class="token string">"update"</span><span class="token punctuation">,</span> JSON<span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    timeout <span class="token operator">=</span> <span class="token function">setTimeout</span><span class="token punctuation">(</span>ticker<span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre>
+<h4 id="browser-listen-and-display">Browser: Listen and Display</h4>
+<pre class=" language-js"><code class="prism  language-js">socket<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">"update"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>data<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> <span class="token punctuation">{</span> price<span class="token punctuation">,</span> change <span class="token punctuation">}</span> <span class="token operator">=</span> JSON<span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"#price"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span>price<span class="token punctuation">.</span><span class="token function">toFixed</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"#change"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span>change<span class="token punctuation">.</span><span class="token function">toFixed</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h4 id="control-with-playpause">Control with Play/Pause</h4>
+<ul>
+<li>Browser sends “command” event to server:<pre class=" language-js"><code class="prism  language-js"><span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"#play"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">"click"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> socket<span class="token punctuation">.</span><span class="token function">emit</span><span class="token punctuation">(</span><span class="token string">"command"</span><span class="token punctuation">,</span> <span class="token string">"play"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"#pause"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">"click"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> socket<span class="token punctuation">.</span><span class="token function">emit</span><span class="token punctuation">(</span><span class="token string">"command"</span><span class="token punctuation">,</span> <span class="token string">"pause"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+<li>Server handles:<pre class=" language-js"><code class="prism  language-js">socket<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">"command"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>command<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>command <span class="token operator">==</span> <span class="token string">"play"</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> playing <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span> <span class="token function">clearTimeout</span><span class="token punctuation">(</span>timeout<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token function">ticker</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+  <span class="token keyword">else</span> <span class="token punctuation">{</span> playing <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+</ul>
+<hr>
+<h3 id="messaging-between-browsers-via-server">Messaging Between Browsers (via Server)</h3>
+<ul>
+<li>Server tracks all sockets by their unique <code>socket.id</code><pre class=" language-js"><code class="prism  language-js"><span class="token keyword">const</span> sockets <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+io<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">"connection"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>socket<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  sockets<span class="token punctuation">[</span>socket<span class="token punctuation">.</span>id<span class="token punctuation">]</span> <span class="token operator">=</span> socket<span class="token punctuation">;</span>
+  <span class="token comment">// ...</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+<li>Browser sends message with target id:<pre class=" language-js"><code class="prism  language-js">socket<span class="token punctuation">.</span><span class="token function">emit</span><span class="token punctuation">(</span><span class="token string">"message"</span><span class="token punctuation">,</span> JSON<span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span><span class="token punctuation">{</span> to<span class="token punctuation">:</span> <span class="token string">"targetSocketId"</span><span class="token punctuation">,</span> message<span class="token punctuation">:</span> <span class="token string">"Hi!"</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+<li>Server relays:<pre class=" language-js"><code class="prism  language-js">socket<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">"message"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>data<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> <span class="token punctuation">{</span> to<span class="token punctuation">,</span> message <span class="token punctuation">}</span> <span class="token operator">=</span> JSON<span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>sockets<span class="token punctuation">[</span>to<span class="token punctuation">]</span><span class="token punctuation">)</span> sockets<span class="token punctuation">[</span>to<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">emit</span><span class="token punctuation">(</span><span class="token string">"message"</span><span class="token punctuation">,</span> message<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+</ul>
+<hr>
+<h3 id="summary-table">Summary Table</h3>
+
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>HTTP / AJAX</th>
+<th>WebSocket (<a href="http://Socket.IO">Socket.IO</a>)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Connection</td>
+<td>New for each request</td>
+<td>Persistent, stays open</td>
+</tr>
+<tr>
+<td>Direction</td>
+<td>Client → Server only</td>
+<td>Bi-directional</td>
+</tr>
+<tr>
+<td>Overhead</td>
+<td>High (headers, etc.)</td>
+<td>Low (max 14 bytes per message)</td>
+</tr>
+<tr>
+<td>Server Push</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Real-time Apps</td>
+<td>Not efficient</td>
+<td>Excellent</td>
+</tr>
+<tr>
+<td>Example Use Cases</td>
+<td>Forms, static pages</td>
+<td>Chat, live updates, collaboration</td>
+</tr>
+</tbody>
+</table><hr>
+<p><strong>Use WebSocket (with libraries like <a href="http://Socket.IO">Socket.IO</a>) for real-time, low-latency, bi-directional communication in modern web apps.</strong></p>
+<hr>
+<h2 id="restful-apis">RESTful APIs</h2>
+<h3 id="what-is-rest">What is REST?</h3>
+<ul>
+<li><strong>REST</strong> stands for <strong>REpresentational State Transfer</strong>.</li>
+<li>It provides <strong>guidelines</strong> for designing web server endpoints (APIs) to manage server-side data in a systematic, standardized way.</li>
+<li>RESTful APIs expose backend data as <strong>resources</strong> that can be created, read, updated, or deleted (CRUD).</li>
+</ul>
+<hr>
+<h3 id="why-use-restful-apis">Why Use RESTful APIs?</h3>
+<ul>
+<li>Without REST, endpoint and URL design gets messy and hard to maintain.</li>
+<li>RESTful APIs:
+<ul>
+<li>Use a <strong>uniform, predictable interface</strong>.</li>
+<li>Map HTTP methods directly to CRUD operations.</li>
+<li>Make backend logic and data easier to manage, scale, and document.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="restful-api-structure">RESTful API Structure</h3>
+<h4 id="resource-oriented-urls"><strong>Resource-Oriented URLs</strong></h4>
+<ul>
+<li>Each data type (resource) is a <strong>collection</strong>: <code>/books</code>, <code>/readers</code>, <code>/activities</code>, etc.</li>
+<li>Each individual item has a unique <code>/collection/id</code> path:<br>
+e.g. <code>/books/13</code>, <code>/readers/7</code></li>
+<li>URLs are <strong>nouns</strong> (data), not verbs (actions).</li>
+</ul>
+<h4 id="http-methods-and-crud-mapping"><strong>HTTP Methods and CRUD Mapping</strong></h4>
+
+<table>
+<thead>
+<tr>
+<th>HTTP Method</th>
+<th>Action</th>
+<th>Example URL</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>Read</td>
+<td><code>/books</code>, <code>/books/1</code></td>
+<td>Get all books or one by id</td>
+</tr>
+<tr>
+<td>POST</td>
+<td>Create</td>
+<td><code>/books</code></td>
+<td>Create a new book (send data)</td>
+</tr>
+<tr>
+<td>PUT/PATCH</td>
+<td>Update</td>
+<td><code>/books/1</code></td>
+<td>Update (replace/patch) a book</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td>Delete</td>
+<td><code>/books/1</code></td>
+<td>Delete a book by id</td>
+</tr>
+</tbody>
+</table><hr>
+<h3 id="api-example-design">API Example Design</h3>
+<h4 id="good-restful-design"><strong>Good RESTful Design</strong></h4>
+<ul>
+<li>Collection URL: <code>/books</code></li>
+<li>Item URL: <code>/books/:bookId</code></li>
+<li>Example:
+<ul>
+<li>Get all books: <code>GET /books</code></li>
+<li>Get book 2: <code>GET /books/2</code></li>
+<li>Create a book: <code>POST /books</code> (body: new book data)</li>
+<li>Update book 2: <code>PUT /books/2</code> (body: updated data)</li>
+<li>Delete book 2: <code>DELETE /books/2</code></li>
+</ul>
+</li>
+</ul>
+<h4 id="non-restful-messy-design"><strong>Non-RESTful (messy) design</strong></h4>
+<ul>
+<li><code>/get_all_books</code>, <code>/add_book?title=X</code>, <code>/delete_book?id=Y</code>, etc.</li>
+</ul>
+<hr>
+<h3 id="data-format">Data Format</h3>
+<ul>
+<li>Typically <strong>JSON</strong> is used for both input and output.<pre class=" language-json"><code class="prism  language-json"><span class="token punctuation">{</span>
+  <span class="token string">"id"</span><span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+  <span class="token string">"title"</span><span class="token punctuation">:</span> <span class="token string">"The Snow Queen"</span><span class="token punctuation">,</span>
+  <span class="token string">"author"</span><span class="token punctuation">:</span> <span class="token string">"H. C. Andersen"</span><span class="token punctuation">,</span>
+  <span class="token string">"year"</span><span class="token punctuation">:</span> <span class="token number">1944</span>
+<span class="token punctuation">}</span>
+</code></pre>
+</li>
+</ul>
+<hr>
+<h3 id="http-status-codes-in-restful-apis">HTTP Status Codes in RESTful APIs</h3>
+
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Meaning</th>
+<th>When Used</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>OK</td>
+<td>Successful GET/PUT/DELETE</td>
+</tr>
+<tr>
+<td>201</td>
+<td>Created</td>
+<td>Successful POST</td>
+</tr>
+<tr>
+<td>204</td>
+<td>No Content</td>
+<td>Success, no body</td>
+</tr>
+<tr>
+<td>400</td>
+<td>Bad Request</td>
+<td>Invalid input</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Not Found</td>
+<td>Item/endpoint not found</td>
+</tr>
+</tbody>
+</table><ul>
+<li>Use <code>Location</code> header with 201 to specify new resource’s URL.</li>
+</ul>
+<hr>
+<h3 id="express-example-restful-endpoints">Express Example: RESTful Endpoints</h3>
+<pre class=" language-js"><code class="prism  language-js"><span class="token comment">// Get all books</span>
+app<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string">"/books"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  res<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token operator">...</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// all books</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Get single book</span>
+app<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string">"/books/:bookId"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> bookId <span class="token operator">=</span> req<span class="token punctuation">.</span>params<span class="token punctuation">.</span>bookId<span class="token punctuation">;</span>
+  res<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token operator">...</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// one book</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Create a book</span>
+app<span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span><span class="token string">"/books"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> book <span class="token operator">=</span> req<span class="token punctuation">.</span>body<span class="token punctuation">;</span>
+  <span class="token comment">// ...create logic...</span>
+  res<span class="token punctuation">.</span><span class="token function">status</span><span class="token punctuation">(</span><span class="token number">201</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">location</span><span class="token punctuation">(</span><span class="token string">"/books/"</span> <span class="token operator">+</span> book<span class="token punctuation">.</span>id<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span>book<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Update a book</span>
+app<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"/books/:bookId"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> bookId <span class="token operator">=</span> req<span class="token punctuation">.</span>params<span class="token punctuation">.</span>bookId<span class="token punctuation">;</span>
+  <span class="token keyword">const</span> book <span class="token operator">=</span> req<span class="token punctuation">.</span>body<span class="token punctuation">;</span>
+  <span class="token comment">// ...update logic...</span>
+  res<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span>book<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Delete a book</span>
+app<span class="token punctuation">.</span><span class="token keyword">delete</span><span class="token punctuation">(</span><span class="token string">"/books/:bookId"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> bookId <span class="token operator">=</span> req<span class="token punctuation">.</span>params<span class="token punctuation">.</span>bookId<span class="token punctuation">;</span>
+  <span class="token comment">// ...delete logic...</span>
+  res<span class="token punctuation">.</span><span class="token function">sendStatus</span><span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<hr>
+<h3 id="using-restful-apis-in-web-pages">Using RESTful APIs in Web Pages</h3>
+<ul>
+<li>
+<p>Use <code>fetch()</code> with the correct HTTP method and URL.</p>
+</li>
+<li>
+<p>Example:</p>
+<pre class=" language-js"><code class="prism  language-js"><span class="token comment">// GET all books</span>
+<span class="token function">fetch</span><span class="token punctuation">(</span><span class="token string">"/books"</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>response <span class="token operator">=&gt;</span> response<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>books <span class="token operator">=&gt;</span> <span class="token punctuation">{</span> <span class="token comment">/* do something */</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// POST (create book)</span>
+<span class="token function">fetch</span><span class="token punctuation">(</span><span class="token string">"/books"</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  method<span class="token punctuation">:</span> <span class="token string">"POST"</span><span class="token punctuation">,</span>
+  headers<span class="token punctuation">:</span> <span class="token punctuation">{</span> <span class="token string">"Content-Type"</span><span class="token punctuation">:</span> <span class="token string">"application/json"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  body<span class="token punctuation">:</span> JSON<span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span><span class="token punctuation">{</span> title<span class="token punctuation">:</span> <span class="token string">"New Book"</span><span class="token punctuation">,</span> author<span class="token punctuation">:</span> <span class="token string">"X"</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// PUT (update book)</span>
+<span class="token function">fetch</span><span class="token punctuation">(</span><span class="token string">"/books/1"</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  method<span class="token punctuation">:</span> <span class="token string">"PUT"</span><span class="token punctuation">,</span>
+  headers<span class="token punctuation">:</span> <span class="token punctuation">{</span> <span class="token string">"Content-Type"</span><span class="token punctuation">:</span> <span class="token string">"application/json"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  body<span class="token punctuation">:</span> JSON<span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span><span class="token punctuation">{</span> title<span class="token punctuation">:</span> <span class="token string">"Updated Title"</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// DELETE</span>
+<span class="token function">fetch</span><span class="token punctuation">(</span><span class="token string">"/books/1"</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> method<span class="token punctuation">:</span> <span class="token string">"DELETE"</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+<li>
+<p>Always check <code>response.status</code> for success or errors:</p>
+<pre class=" language-js"><code class="prism  language-js"><span class="token function">fetch</span><span class="token punctuation">(</span><span class="token string">"/books"</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>response <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>response<span class="token punctuation">.</span>status <span class="token operator">===</span> <span class="token number">200</span><span class="token punctuation">)</span> <span class="token keyword">return</span> response<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">else</span> <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">"Failed to get books!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+</ul>
+<hr>
+<h3 id="patch-vs.-put">PATCH vs. PUT</h3>
+<ul>
+<li><strong>PUT</strong>: Replace the entire resource.</li>
+<li><strong>PATCH</strong>: Update only some fields.</li>
+</ul>
+<p>Example PATCH body:</p>
+<pre class=" language-json"><code class="prism  language-json"><span class="token punctuation">{</span> <span class="token string">"year"</span><span class="token punctuation">:</span> <span class="token number">1970</span> <span class="token punctuation">}</span>
+</code></pre>
+<hr>
+<h3 id="summary-table-1">Summary Table</h3>
+
+<table>
+<thead>
+<tr>
+<th>Operation</th>
+<th>HTTP Method</th>
+<th>URL Pattern</th>
+<th>Success Code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>List All</td>
+<td>GET</td>
+<td>/books</td>
+<td>200</td>
+</tr>
+<tr>
+<td>Get One</td>
+<td>GET</td>
+<td>/books/2</td>
+<td>200</td>
+</tr>
+<tr>
+<td>Create</td>
+<td>POST</td>
+<td>/books</td>
+<td>201</td>
+</tr>
+<tr>
+<td>Update (full)</td>
+<td>PUT</td>
+<td>/books/2</td>
+<td>200 or 204</td>
+</tr>
+<tr>
+<td>Update (part)</td>
+<td>PATCH</td>
+<td>/books/2</td>
+<td>200 or 204</td>
+</tr>
+<tr>
+<td>Delete</td>
+<td>DELETE</td>
+<td>/books/2</td>
+<td>200 or 204</td>
+</tr>
+</tbody>
+</table><hr>
+<p><strong>RESTful APIs provide a consistent, scalable, and easy-to-understand way to manage data on modern web servers.</strong></p>
+<hr>
+<h2 id="posting-form-data">Posting Form Data</h2>
+<h3 id="get-vs-post-methods-in-forms">GET vs POST Methods in Forms</h3>
+<ul>
+<li>
+<p><strong>GET method:</strong></p>
+<ul>
+<li>Form data is appended to the URL as a <strong>query string</strong>.</li>
+<li>Example:<pre><code>/target?firstname=Wentao&amp;lastname=Xie
+</code></pre>
+</li>
+<li>Not suitable for sensitive data or file uploads.</li>
+</ul>
+</li>
+<li>
+<p><strong>POST method:</strong></p>
+<ul>
+<li>Form data is sent <strong>inside the HTTP request body</strong>.</li>
+<li>Not visible in the URL.</li>
+<li>Used for sensitive data and file uploads.</li>
+<li>Request looks like:<pre><code>POST /target HTTP/1.1
+Content-Length: 29
+Content-Type: application/x-www-form-urlencoded
+
+firstname=Wentao&amp;lastname=Xie
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="html-form-example-post">HTML Form Example (POST)</h3>
+<pre class=" language-html"><code class="prism  language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">method</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>post<span class="token punctuation">"</span></span> <span class="token attr-name">action</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>/target<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Firstname: <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>firstname<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Lastname: <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>lastname<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>submit<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+<hr>
+<h3 id="handling-form-data-in-express-text-data">Handling Form Data in Express (Text Data)</h3>
+<ul>
+<li>
+<p><strong>For GET:</strong><br>
+Use <code>req.query</code> (built-in).</p>
+</li>
+<li>
+<p><strong>For POST (urlencoded):</strong></p>
+<ol>
+<li>Add middleware:<pre class=" language-js"><code class="prism  language-js">app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>express<span class="token punctuation">.</span><span class="token function">urlencoded</span><span class="token punctuation">(</span><span class="token punctuation">{</span> extended<span class="token punctuation">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+<li>Access form data as JS object via <code>req.body</code>:<pre class=" language-js"><code class="prism  language-js">app<span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span><span class="token string">"/target"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> <span class="token punctuation">{</span> firstname<span class="token punctuation">,</span> lastname <span class="token punctuation">}</span> <span class="token operator">=</span> req<span class="token punctuation">.</span>body<span class="token punctuation">;</span>
+  <span class="token comment">// ...</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>Why is this needed?</strong></p>
+<ul>
+<li>HTML forms by default submit as <code>application/x-www-form-urlencoded</code></li>
+<li>JSON POSTs (e.g. via fetch) are parsed by <code>express.json()</code>, but form-encoded data requires <code>express.urlencoded()</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Supports complex fields:</strong></p>
+<ul>
+<li>Nested objects, arrays:<pre><code>name=John&amp;address[city]=NewYork&amp;hobbies[]=reading&amp;hobbies[]=traveling
+</code></pre>
+is parsed as:<pre class=" language-js"><code class="prism  language-js"><span class="token punctuation">{</span>
+  name<span class="token punctuation">:</span> <span class="token string">"John"</span><span class="token punctuation">,</span>
+  address<span class="token punctuation">:</span> <span class="token punctuation">{</span> city<span class="token punctuation">:</span> <span class="token string">"NewYork"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  hobbies<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">"reading"</span><span class="token punctuation">,</span> <span class="token string">"traveling"</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="handling-file-uploads-with-forms">Handling File Uploads with Forms</h3>
+<ul>
+<li>
+<p><strong>Form Setup:</strong></p>
+<ul>
+<li>Must use <code>POST</code></li>
+<li>Set <code>enctype="multipart/form-data"</code></li>
+<li>Example:<pre class=" language-html"><code class="prism  language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">enctype</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>multipart/form-data<span class="token punctuation">"</span></span> <span class="token attr-name">method</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>post<span class="token punctuation">"</span></span> <span class="token attr-name">action</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>/upload<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>file<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>myimage<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>submit<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Why multipart/form-data?</strong></p>
+<ul>
+<li>Required for uploading files (binary data).</li>
+<li>Sends each form field/part with headers and boundaries.</li>
+</ul>
+</li>
+<li>
+<p><strong>Typical multipart POST request:</strong></p>
+<pre><code>POST /upload HTTP/1.1
+Content-Type: multipart/form-data; boundary=Boundary-1234567890
+
+--Boundary-1234567890
+Content-Disposition: form-data; name="myimage"; filename="me.png"
+Content-Type: image/png
+
+...file content...
+--Boundary-1234567890--
+</code></pre>
+</li>
+</ul>
+<hr>
+<h3 id="handling-file-uploads-in-express">Handling File Uploads in Express</h3>
+<ul>
+<li><strong>Install multer:</strong><pre><code>npm install multer
+</code></pre>
+</li>
+<li><strong>Set up multer middleware:</strong><pre class=" language-js"><code class="prism  language-js"><span class="token keyword">const</span> multer <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"multer"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> upload <span class="token operator">=</span> <span class="token function">multer</span><span class="token punctuation">(</span><span class="token punctuation">{</span> dest<span class="token punctuation">:</span> <span class="token string">"uploads/"</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Save to 'uploads' folder</span>
+</code></pre>
+</li>
+<li><strong>Use for file-uploading route:</strong><pre class=" language-js"><code class="prism  language-js">app<span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span><span class="token string">"/upload"</span><span class="token punctuation">,</span>
+  upload<span class="token punctuation">.</span><span class="token function">single</span><span class="token punctuation">(</span><span class="token string">"myimage"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token comment">// "myimage" is the input name in the form</span>
+  <span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment">// req.file contains file metadata</span>
+    <span class="token comment">// req.file.path is the temporary file</span>
+    <span class="token comment">// req.file.originalname is the uploaded file name</span>
+    <span class="token comment">// ...</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+<li><strong>Example req.file:</strong><pre class=" language-js"><code class="prism  language-js"><span class="token punctuation">{</span>
+  fieldname<span class="token punctuation">:</span> <span class="token string">'myimage'</span><span class="token punctuation">,</span>
+  originalname<span class="token punctuation">:</span> <span class="token string">'me.png'</span><span class="token punctuation">,</span>
+  encoding<span class="token punctuation">:</span> <span class="token string">'7bit'</span><span class="token punctuation">,</span>
+  mimetype<span class="token punctuation">:</span> <span class="token string">'image/png'</span><span class="token punctuation">,</span>
+  destination<span class="token punctuation">:</span> <span class="token string">'uploads/'</span><span class="token punctuation">,</span>
+  filename<span class="token punctuation">:</span> <span class="token string">'3fe1d8b16093c246fc5814f70aa74ba6'</span><span class="token punctuation">,</span>
+  path<span class="token punctuation">:</span> <span class="token string">'uploads\\3fe1d8b16093c246fc5814f70aa74ba6'</span><span class="token punctuation">,</span>
+  size<span class="token punctuation">:</span> <span class="token number">269795</span>
+<span class="token punctuation">}</span>
+</code></pre>
+</li>
+</ul>
+<hr>
+<h3 id="moving-uploaded-files">Moving Uploaded Files</h3>
+<ul>
+<li>
+<p><strong>Copy to public folder and delete temp file:</strong></p>
+<pre class=" language-js"><code class="prism  language-js"><span class="token keyword">const</span> fs <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"fs"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>promises<span class="token punctuation">;</span>
+app<span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span><span class="token string">"/upload"</span><span class="token punctuation">,</span>
+  upload<span class="token punctuation">.</span><span class="token function">single</span><span class="token punctuation">(</span><span class="token string">"myimage"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token keyword">async</span> <span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">await</span> fs<span class="token punctuation">.</span><span class="token function">copyFile</span><span class="token punctuation">(</span>req<span class="token punctuation">.</span>file<span class="token punctuation">.</span>path<span class="token punctuation">,</span> <span class="token string">"public/"</span> <span class="token operator">+</span> req<span class="token punctuation">.</span>file<span class="token punctuation">.</span>originalname<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">await</span> fs<span class="token punctuation">.</span><span class="token function">unlink</span><span class="token punctuation">(</span>req<span class="token punctuation">.</span>file<span class="token punctuation">.</span>path<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    res<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token string">"File uploaded successfully!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+<li>
+<p><strong>fs.copyFile and fs.unlink are Promise-based</strong>, so use <code>async/await</code>.</p>
+</li>
+</ul>
+<hr>
+<h3 id="summary-table-2">Summary Table</h3>
+
+<table>
+<thead>
+<tr>
+<th>Data Type</th>
+<th>Method</th>
+<th>Encoding Type</th>
+<th>Express Middleware</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Text fields</td>
+<td>GET</td>
+<td>Query string in URL</td>
+<td>Built-in (<code>req.query</code>)</td>
+</tr>
+<tr>
+<td>Text fields</td>
+<td>POST</td>
+<td><code>application/x-www-form-urlencoded</code></td>
+<td><code>express.urlencoded()</code></td>
+</tr>
+<tr>
+<td>JSON (AJAX)</td>
+<td>POST</td>
+<td><code>application/json</code></td>
+<td><code>express.json()</code></td>
+</tr>
+<tr>
+<td>File upload</td>
+<td>POST</td>
+<td><code>multipart/form-data</code></td>
+<td><code>multer</code></td>
+</tr>
+</tbody>
+</table><hr>
+<p><strong>Use the correct encoding and middleware for each type of form data. For file uploads, always use multipart forms and a file-handling middleware like multer.</strong></p>
+
+    </div>
+  </div>
+</body>
+
+</html>
